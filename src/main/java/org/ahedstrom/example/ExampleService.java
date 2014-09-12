@@ -13,7 +13,7 @@ public class ExampleService extends Service<Configuration> {
 
     @Override
     public void run(Configuration configuration, Environment environment) throws Exception {
-        environment.addResource(new Resource());
+        environment.addResource((new Resource()));
         environment.addServlet(new SseEventSourceServlet(), "/sse");
     }
 
