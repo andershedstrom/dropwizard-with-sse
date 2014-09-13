@@ -21,5 +21,7 @@ public class ExampleService extends Service<Configuration> {
 
     public static void main(String[] args) throws Exception {
         new ExampleService().run(args);
+        int a = (3 + 5) / (7-1);
+        //new ExampleService().run(args);
     }
 }
