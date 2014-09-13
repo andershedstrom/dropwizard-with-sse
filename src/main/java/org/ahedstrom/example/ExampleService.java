@@ -16,6 +16,10 @@ public class ExampleService extends Service<Configuration> {
         environment.addResource((new Resource()));
         environment.addServlet(new SseEventSourceServlet(), "/sse");
     }
+    
+    private void nothing() {
+        
+    }
 
     public static void main(String[] args) throws Exception {
         new ExampleService().run(args);
