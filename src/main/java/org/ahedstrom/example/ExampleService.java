@@ -1,5 +1,7 @@
 package org.ahedstrom.example;
 
+import java.util.Map;
+
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Configuration;
