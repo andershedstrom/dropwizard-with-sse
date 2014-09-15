@@ -18,8 +18,10 @@ public class ExampleService extends Service<Configuration> {
     private int nothing() {
         if(true) {
             return 42;
+        } else {
+            return 7;
         }
-        return 7;
+        return 0;
     }
 
     public static void main(String[] args) throws Exception {
