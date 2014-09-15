@@ -28,7 +28,7 @@ public class EventPublisher {
             }
         }
         return;
-        System.out.println("unreachable code");
+        System.out.println("unreachable code -_-");
     }
     
     public static void addListener(SseEventSource l) {
