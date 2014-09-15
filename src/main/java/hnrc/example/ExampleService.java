@@ -15,8 +15,11 @@ public class ExampleService extends Service<Configuration> {
         environment.addServlet(new SseEventSourceServlet(), "/sse");
     }
     
-    private void nothing() {
-        final int a = 0;
+    private int nothing() {
+        if(true) {
+            return 42;
+        }
+        return 7;
     }
 
     public static void main(String[] args) throws Exception {
