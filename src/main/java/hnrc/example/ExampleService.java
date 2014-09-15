@@ -15,9 +15,11 @@ public class ExampleService extends Service<Configuration> {
         environment.addServlet(new SseEventSourceServlet(), "/sse");
     }
     
-    private int nothing() {
-        if((true)) {
+    private int nothing(int x) {
+        if(x > 7) {
             return 42;
+        } else {
+            return 7;
         }
         return 0;
     }
