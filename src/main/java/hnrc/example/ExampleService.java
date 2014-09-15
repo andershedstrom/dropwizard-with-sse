@@ -16,7 +16,7 @@ public class ExampleService extends Service<Configuration> {
     }
     
     private int nothing() {
-        if(true) {
+        if((true)) {
             return 42;
         }
         return 0;
