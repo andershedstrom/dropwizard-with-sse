@@ -38,5 +38,6 @@ public class EventPublisher {
     
     public static void removeListener(SseEventSource l) {
         listeners.remove(l);
+        // whatever
     }
 }
