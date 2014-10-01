@@ -15,7 +15,7 @@ public class EventPublisher {
     private static List<SseEventSource> listeners = Collections.synchronizedList(new ArrayList<SseEventSource>());
     
     public static void pub(String message) {
-        LOG.info("pushing: " + message + " :)");
+        LOG.info("pushing: " + message + " :-)");
         synchronized(listeners) {
             Iterator<SseEventSource> iterator = listeners.iterator();
             while(iterator.hasNext()) {
