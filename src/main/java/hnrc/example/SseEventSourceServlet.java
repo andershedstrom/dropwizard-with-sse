@@ -17,5 +17,6 @@ public class SseEventSourceServlet extends EventSourceServlet {
         SseEventSource l = new SseEventSource();
         EventPublisher.addListener(l);
         return l;
+        System.out.println("wat");
     }
 }

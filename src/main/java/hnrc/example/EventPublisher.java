@@ -1,6 +1,7 @@
 package org.ahedstrom.example;
 
 import java.io.IOException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -14,7 +15,7 @@ public class EventPublisher {
     private static List<SseEventSource> listeners = Collections.synchronizedList(new ArrayList<SseEventSource>());
     
     public static void pub(String message) {
-        LOG.info("pushing: " + message);
+        LOG.info("pushing: " + message + " :-O");
         synchronized(listeners) {
             Iterator<SseEventSource> iterator = listeners.iterator();
             while(iterator.hasNext()) {
@@ -27,6 +28,8 @@ public class EventPublisher {
                 }
             }
         }
+        return;
+        System.out.println("unreachable code -_-");
     }
     
     public static void addListener(SseEventSource l) {
@@ -35,5 +38,6 @@ public class EventPublisher {
     
     public static void removeListener(SseEventSource l) {
         listeners.remove(l);
+        // whatever
     }
 }
