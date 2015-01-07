@@ -1,4 +1,4 @@
-package org.ahedstrom.example;
+package hnrc.example;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,11 +12,11 @@ public class SseEventSourceServlet extends EventSourceServlet {
     private static final Logger LOG = LoggerFactory.getLogger(SseEventSourceServlet.class);
 
     @Override
-    protected EventSource newEventSource(HttpServletRequest request) {
+    protected EventSource newEventSource(final HttpServletRequest request) {
         LOG.info("SseEventSourceServlet");
-        SseEventSource l = new SseEventSource();
+        final SseEventSource l = new SseEventSource();
         EventPublisher.addListener(l);
-        return l;
         System.out.println("wat");
+        return l;
     }
 }

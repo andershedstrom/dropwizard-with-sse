@@ -1,6 +1,5 @@
-package org.ahedstrom.example;
+package hnrc.example;
 
-import java.io.IOException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,30 +12,29 @@ import org.slf4j.LoggerFactory;
 public class EventPublisher {
     private static final Logger LOG = LoggerFactory.getLogger(EventPublisher.class);
     private static List<SseEventSource> listeners = Collections.synchronizedList(new ArrayList<SseEventSource>());
-    
-    public static void pub(String message) {
+
+    public static void pub(final String message) {
         LOG.info("pushing: " + message + " :-O");
         synchronized(listeners) {
-            Iterator<SseEventSource> iterator = listeners.iterator();
+            final Iterator<SseEventSource> iterator = listeners.iterator();
             while(iterator.hasNext()) {
-                SseEventSource sseEventSource = (SseEventSource)iterator.next();
+                final SseEventSource sseEventSource = iterator.next();
                 try {
                     sseEventSource.emitEvent(message);
                 }
-                catch(IOException e) {
+                catch(final IOException e) {
                     LOG.error(e.getMessage());
                 }
             }
         }
         return;
-        System.out.println("unreachable code -_-");
     }
-    
-    public static void addListener(SseEventSource l) {
+
+    public static void addListener(final SseEventSource l) {
         listeners.add(l);
     }
-    
-    public static void removeListener(SseEventSource l) {
+
+    public static void removeListener(final SseEventSource l) {
         listeners.remove(l);
         // whatever
     }
