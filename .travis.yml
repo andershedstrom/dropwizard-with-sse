@@ -1,0 +1,13 @@
+sudo: false
+language: java
+branches:
+  only:
+  - master
+jdk:
+- oraclejdk7
+install: echo "We believe in Maven."
+cache:
+  directories:
+  - $HOME/.m2
+after_success:
+- mvn pmd:pmd bronson:report
